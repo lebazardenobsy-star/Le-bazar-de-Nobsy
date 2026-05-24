@@ -160,8 +160,10 @@ body {
 
 /* ========== HERO SECTION ========== */
 .hero {
-    background: linear-gradient(135deg, #1a1a1a 0%, #0084ff 100%);
-    background-size: 400% 400%;
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(0, 132, 255, 0.6) 100%), 
+                url('https://i.postimg.cc/xd6Mt49f/WA-1779658190407.jpg') center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
     animation: gradientShift 15s ease infinite;
     min-height: 100vh;
     display: flex;
@@ -186,7 +188,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
