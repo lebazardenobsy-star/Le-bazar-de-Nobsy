@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Le bazar de Nobsy - Articles variés à bon prix avec livraison à Joliette, Québec">
+    <meta name="theme-color" content="#0084ff">
+    
+    <title>Le bazar de Nobsy - Bons deals et articles variés</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== NAVBAR / HEADER ========== -->
+    <nav class="navbar">
+        <div class="logo">le bazar de nobsy</div>
+        
+        <!-- Menu de navigation -->
+        <ul class="nav-menu">
+            <li><a href="#accueil" class="nav-link">Accueil</a></li>
+            <li><a href="#about" class="nav-link">À propos</a></li>
+            <li><a href="#produits" class="nav-link">Produits</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        
+        <!-- Hamburger menu for mobile -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue au Bazar de Nobsy</h1>
+            <p class="hero-subtitle">Bons deals, articles variés, et lives en direct depuis Joliette, Québec</p>
+            
+            <div class="hero-buttons">
+                <button class="btn" id="btnProduits">Voir les produits</button>
+                <button class="btn btn-secondary" id="btnLive">Rejoindre le Live</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION À PROPOS ========== -->
+    <section id="about" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">À propos</h2>
+            
+            <div class="about-content">
+                <p>
+                    Bonjour à tous ! Bienvenue sur le bazar de Nobsy. Je propose des articles variés à bon prix. 
+                    Si un article vous intéresse, écrivez-moi en privé sur Messenger et je vous répondrai rapidement. 
+                    Si vous êtes loin, des frais de livraison peuvent s'appliquer. Nous sommes situés à Joliette, Québec.
+                </p>
+                <p>
+                    <strong>Merci et bon magasinage à vous !</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION PRODUITS ========== -->
+    <section id="produits" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Produits du moment</h2>
+            
+            <div class="products-grid">
+                <!-- Produit 1 -->
+                <div class="product-card">
+                    <div class="product-image">📱 Image produit 1</div>
+                    <div class="product-body">
+                        <h3 class="product-name">Produit Exemple 1</h3>
+                        <p class="product-description">
+                            Description courte du produit. Ajoute ici une courte description 
+                            pour attirer les clients.
+                        </p>
+                        <button class="btn product-button" onclick="window.open('https://m.me/', '_blank')">
+                            Commander sur Messenger
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produit 2 -->
+                <div class="product-card">
+                    <div class="product-image">📦 Image produit 2</div>
+                    <div class="product-body">
+                        <h3 class="product-name">Produit Exemple 2</h3>
+                        <p class="product-description">
+                            Description courte du produit. Ajoute ici une courte description 
+                            pour attirer les clients.
+                        </p>
+                        <button class="btn product-button" onclick="window.open('https://m.me/', '_blank')">
+                            Commander sur Messenger
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="product-card">
+                    <div class="product-image">🎁 Image produit 3</div>
+                    <div class="product-body">
+                        <h3 class="product-name">Produit Exemple 3</h3>
+                        <p class="product-description">
+                            Description courte du produit. Ajoute ici une courte description 
+                            pour attirer les clients.
+                        </p>
+                        <button class="btn product-button" onclick="window.open('https://m.me/', '_blank')">
+                            Commander sur Messenger
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Produit 4 (optionnel) -->
+                <div class="product-card">
+                    <div class="product-image">🛍️ Image produit 4</div>
+                    <div class="product-body">
+                        <h3 class="product-name">Produit Exemple 4</h3>
+                        <p class="product-description">
+                            Description courte du produit. Ajoute ici une courte description 
+                            pour attirer les clients.
+                        </p>
+                        <button class="btn product-button" onclick="window.open('https://m.me/', '_blank')">
+                            Commander sur Messenger
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="products-note">
+                *Ajoute tes photos et descriptions directement dans le code HTML.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== SECTION CONTACT ========== -->
+    <section id="contact" class="fade-in-section">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            
+            <div class="contact-grid">
+                <!-- Colonne 1: Informations -->
+                <div class="contact-column">
+                    <!-- Localisation -->
+                    <div class="contact-item">
+                        <div class="contact-item-label">📍 Localisation</div>
+                        <div class="contact-item-value">Joliette, Québec</div>
+                    </div>
+
+                    <!-- Livraison -->
+                    <div class="contact-item">
+                        <div class="contact-item-label">🚚 Livraison</div>
+                        <div class="contact-item-value">Oui, avec frais selon la distance</div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="contact-item">
+                        <div class="contact-item-label">💬 Contact</div>
+                        <div class="contact-item-value">Messenger uniquement</div>
+                        <button class="btn contact-button" onclick="window.open('https://m.me/', '_blank')">
+                            Envoyer un message
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Colonne 2: Google Maps -->
+                <div class="contact-column">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.4769825869433!2d-73.41619!3d46.00326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9e36e6666667f%3A0x8b8b8b8b8b8b8b8b!2sJoliette%2C%20QC!5e0!3m2!1sfr!2sca!4v1234567890"
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Localisation - Joliette, Québec">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <p>&copy; 2026 Le bazar de Nobsy. Tous droits réservés.</p>
+        <p>
+            <a href="https://www.facebook.com/share/g/18YTkXrkvB/" target="_blank" rel="noopener noreferrer">
+                Rejoindre notre groupe Facebook
+            </a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
