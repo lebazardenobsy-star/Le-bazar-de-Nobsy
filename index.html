@@ -230,7 +230,13 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+  <script>
+  document.querySelector('.catalogue-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.catalogue-content').classList.toggle('active');
+  });
+  </script>
 
+  <script src="script.js"></script>
 </body>
 </html>
