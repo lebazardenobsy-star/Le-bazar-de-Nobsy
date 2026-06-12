@@ -1,3 +1,55 @@
+/* ========== BANNIÈRE NOUVEAU LOCAL - GESTION ========== */
+document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('localBanner');
+    
+    // Date de début : 12 juin 2026
+    const startDate = new Date('2026-06-12');
+    const today = new Date();
+    
+    // Calculer la date d'expiration (14 jours après le début)
+    const expirationDate = new Date(startDate);
+    expirationDate.setDate(expirationDate.getDate() + 14); // Expire le 26 juin 2026
+    
+    // Vérifier si la bannière doit être supprimée complètement
+    if (today > expirationDate) {
+        banner.remove();
+        console.log('Bannière supprimée : période de 14 jours dépassée (expiration : 26 juin 2026)');
+        return;
+    }
+    
+    // Gestion de l'animation : 2 minutes affichée + 30 secondes masquée
+    const showDuration = 2 * 60 * 1000; // 2 minutes en millisecondes
+    const hideDuration = 30 * 1000;      // 30 secondes en millisecondes
+    
+    function toggleBanner() {
+        if (banner.classList.contains('hidden')) {
+            // La bannière est cachée, la montrer
+            banner.classList.remove('hidden');
+            console.log('Bannière affichée');
+            
+            // Cacher après 2 minutes
+            setTimeout(function() {
+                banner.classList.add('hidden');
+                console.log('Bannière masquée');
+                
+                // Montrer à nouveau après 30 secondes
+                setTimeout(toggleBanner, hideDuration);
+            }, showDuration);
+        }
+    }
+    
+    // Lancer le cycle initial : afficher pendant 2 minutes
+    setTimeout(function() {
+        banner.classList.add('hidden');
+        console.log('Bannière masquée (premier cycle)');
+        
+        // Puis continuer le cycle 2min affichée + 30s masquée
+        setTimeout(toggleBanner, hideDuration);
+    }, showDuration);
+    
+    console.log('Animation bannière activée - Cycle: 2min affichée + 30s masquée - Expires le 26 juin 2026');
+});
+
 /* ========== MOBILE MENU FUNCTIONALITY ========== */
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
