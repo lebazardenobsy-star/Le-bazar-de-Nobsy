@@ -57,6 +57,59 @@ body {
     }
 }
 
+/* ========== BANNIÈRE NOUVEAU LOCAL ========== */
+.local-banner {
+    background-color: #dc143c;
+    color: var(--white);
+    padding: 12px 20px;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    border-radius: 0 0 12px 0;
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+    animation: bannerShow 0.5s ease-out;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.local-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.local-banner-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.local-banner-text {
+    flex-grow: 1;
+}
+
+.local-banner.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes bannerShow {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ========== CONTAINER & GRID ========== */
 .container {
     max-width: 1200px;
@@ -67,7 +120,7 @@ body {
 /* ========== NAVBAR / HEADER ========== */
 .navbar {
     position: sticky;
-    top: 0;
+    top: 45px;
     z-index: 1000;
     background-color: var(--white);
     box-shadow: var(--shadow);
@@ -173,6 +226,7 @@ body {
     color: var(--white);
     position: relative;
     overflow: hidden;
+    margin-top: 45px;
 }
 
 @keyframes gradientShift {
@@ -545,12 +599,13 @@ footer a:focus {
 
     .navbar {
         padding: var(--spacing-sm) var(--spacing-md);
+        top: 45px;
     }
 
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 115px;
         flex-direction: column;
         background-color: var(--white);
         width: 100%;
@@ -573,6 +628,11 @@ footer a:focus {
 
     .hamburger {
         display: flex;
+    }
+
+    .hero {
+        min-height: 100vh;
+        margin-top: 45px;
     }
 
     .hero h1 {
@@ -603,6 +663,15 @@ footer a:focus {
     section {
         padding: var(--spacing-lg) 0;
     }
+
+    .local-banner-content {
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+
+    .local-banner-icon {
+        font-size: 1.1rem;
+    }
 }
 
 /* Mobile (480px and below) */
@@ -614,6 +683,7 @@ footer a:focus {
 
     .navbar {
         padding: var(--spacing-sm);
+        top: 45px;
     }
 
     .logo {
@@ -622,6 +692,7 @@ footer a:focus {
 
     .hero {
         min-height: 80vh;
+        margin-top: 45px;
     }
 
     .hero h1 {
@@ -691,16 +762,36 @@ footer a:focus {
         margin: var(--spacing-xs) 0;
         font-size: 0.9rem;
     }
+
+    .local-banner {
+        border-radius: 0;
+        padding: 10px 12px;
+        top: 0;
+    }
+
+    .local-banner-content {
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+
+    .local-banner-icon {
+        font-size: 1rem;
+    }
 }
 
 /* Extra small devices (320px and below) */
 @media (max-width: 320px) {
     .navbar {
         flex-wrap: wrap;
+        top: 45px;
     }
 
     .logo {
         font-size: 1rem;
+    }
+
+    .hero {
+        margin-top: 45px;
     }
 
     .hero h1 {
@@ -741,7 +832,8 @@ button:focus {
 /* ========== PRINT STYLES ========== */
 @media print {
     .navbar,
-    footer {
+    footer,
+    .local-banner {
         display: none;
     }
 
