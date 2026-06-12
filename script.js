@@ -17,35 +17,33 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
     
+    // Afficher la bannière immédiatement au chargement
+    banner.classList.remove('hidden');
+    console.log('Bannière affichée au chargement de la page');
+    
     // Gestion de l'animation : 2 minutes affichée + 30 secondes masquée
     const showDuration = 2 * 60 * 1000; // 2 minutes en millisecondes
     const hideDuration = 30 * 1000;      // 30 secondes en millisecondes
     
-    function toggleBanner() {
-        if (banner.classList.contains('hidden')) {
-            // La bannière est cachée, la montrer
-            banner.classList.remove('hidden');
-            console.log('Bannière affichée');
+    function toggleBannerCycle() {
+        // Masquer après 2 minutes
+        setTimeout(function() {
+            banner.classList.add('hidden');
+            console.log('Bannière masquée');
             
-            // Cacher après 2 minutes
+            // Montrer à nouveau après 30 secondes
             setTimeout(function() {
-                banner.classList.add('hidden');
-                console.log('Bannière masquée');
+                banner.classList.remove('hidden');
+                console.log('Bannière réaffichée');
                 
-                // Montrer à nouveau après 30 secondes
-                setTimeout(toggleBanner, hideDuration);
-            }, showDuration);
-        }
+                // Relancer le cycle
+                toggleBannerCycle();
+            }, hideDuration);
+        }, showDuration);
     }
     
-    // Lancer le cycle initial : afficher pendant 2 minutes
-    setTimeout(function() {
-        banner.classList.add('hidden');
-        console.log('Bannière masquée (premier cycle)');
-        
-        // Puis continuer le cycle 2min affichée + 30s masquée
-        setTimeout(toggleBanner, hideDuration);
-    }, showDuration);
+    // Lancer le premier cycle après 2 minutes
+    toggleBannerCycle();
     
     console.log('Animation bannière activée - Cycle: 2min affichée + 30s masquée - Expires le 26 juin 2026');
 });
