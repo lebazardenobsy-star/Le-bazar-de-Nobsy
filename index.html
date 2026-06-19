@@ -1,460 +1,56 @@
 <!DOCTYPE html>
-<html lang="fr-CA">
+<html lang="fr">
 <head>
-    <meta name="google-site-verification" content="EeZ8feRNihjdDl220C4KhTG3ArUuo6cZLaiwO5p1MHs" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Le bazar de Nobsy - Articles variés à bon prix avec livraison à Joliette, Québec">
-    <meta name="theme-color" content="#0084ff">
-<!-- SEO pour Canada -->
-    <meta name="keywords" content="bazar, bons deals, achat en ligne, Nobsy, pas cher, Canada, Montréal, Toronto">
-    <meta name="author" content="Le bazar de Nobsy">
-    <meta name="language" content="French">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lebazardenobsy-star.github.io/Le-bazar-de-Nobsy/">
-    
-    <!-- Aperçu WhatsApp / Facebook -->
-    <meta property="og:title" content="Le bazar de Nobsy - Bons deals et articles variés">
-    <meta property="og:description" content="Découvre les meilleurs deals et articles variés à petits prix sur Le bazar de Nobsy">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lebazardenobsy-star.github.io/Le-bazar-de-Nobsy/">
-    <meta property="og:image" content="https://lebazardenobsy-star.github.io/Le-bazar-de-Nobsy/preview.jpg">
-    
-    <title>Le bazar de Nobsy - Bons deals et articles variés</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitez notre site - Le bazar de Nobsy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: white;
+    }
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 50px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    a {
+      display: inline-block;
+      background: #fff;
+      color: #667eea;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Bannière Nouveau local Toit Rouge -->
-    <div id="banner-toit-rouge" style="position: fixed; top: 90px; left: 50%; transform: translateX(-50%); background: #ff0000; color: white; padding: 10px 18px; border-radius: 12px; font-weight: bold; font-size: 15px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 9999; max-width: 90%;">
-    🚨 Nouvel local au marché aux puces à Joliette qui s'appelle Toit Rouge
-    </div>
-
-    <!-- ========== NAVBAR / HEADER ========== -->
-    <nav class="navbar">
-        <div class="logo">le bazar de nobsy</div>
-        
-        <!-- Menu de navigation -->
-        <ul class="nav-menu">
-            <li><a href="#accueil" class="nav-link">Accueil</a></li>
-            <li><a href="#about" class="nav-link">À propos</a></li>
-            <li><a href="#produits" class="nav-link">Produits</a></li>
-            <li><a href="#catalogue">Catalogue</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        
-        <!-- Hamburger menu for mobile -->
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <!-- ========== HERO SECTION ========== -->
-    <section id="accueil" class="hero">
-        <div class="hero-content">
-            <h1>Bienvenue au Bazar de Nobsy</h1>
-            <p class="hero-subtitle">Bons deals, articles variés, et lives en direct depuis Joliette, Québec</p>
-            
-            <div class="hero-buttons">
-                <button class="btn" id="btnProduits">Voir les produits</button>
-                <button class="btn btn-secondary" id="btnLive">Rejoindre le Live</button>
-                <button class="btn" onclick="window.open('https://sites.google.com/view/catalogue-le-bazar-de-nobsy/accueil')">Visiter notre site de catalogues</button>
-                <button class="btn" onclick="window.open('https://ruinsnradz.servegame.com/?fbclid=IwdGRzaASZrT1jbGNrBJmtN2V4dG4DYWVtAjExAHNydGMGYXBwX2lkDDM1MDY4NTUzMTcyOAABHutqdmeA7YERyYH-9h9uRXHQdg8m26s51e1-Fwbxb8qMVZR-B_UxOYOeh4-a_aem_4FDOKNJGAcxMDCd7wz0CpQ')">En partenariat avec Ruins'n Radz</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SECTION À PROPOS ========== -->
-    <section id="about" class="fade-in-section">
-        <div class="container">
-            <h2 class="section-title">À propos</h2>
-            
-            <div class="about-content">
-                <p>
-                    Bonjour à tous ! Bienvenue sur le bazar de Nobsy. Je propose des articles variés à bon prix. 
-                    Si un article vous intéresse, écrivez-moi en privé sur Messenger et je vous répondrai rapidement. 
-                    Si vous êtes loin, des frais de livraison peuvent s'appliquer. Nous sommes situés à Joliette, Québec.
-                </p>
-                <p>
-                    <strong>Merci et bon magasinage à vous !</strong>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== SECTION PRODUITS ========== -->
-    <section id="produits" class="fade-in-section">
-        <div class="container">
-            <h2 class="section-title">Produits du moment</h2>
-
-            <div class="products-grid">
-                <!-- Produit 0: Tigrou-->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/R01vGLjM/1780242864768.jpg" alt=" " style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"></h3>
-                        <p class="product-description">
-                            Porte clé peluche Tigrou 🐅 
-                        </p>
-                        <p class="product-price"><strong>5$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-            <div class="products-grid">
-                <!-- Produit 0: peluche-->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/jdqnfLnb/1780242689891.jpg" alt=" " style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"></h3>
-                        <p class="product-description">
-                            Peluche poulpe rose et rouge. réversible !
-                        </p>
-                        <p class="product-price"><strong>5$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-            <div class="products-grid">
-                <!-- Produid porcinet-->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/59mTRP4L/1780306967254.jpg" alt=" " style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"></h3>
-                        <p class="product-description">
-                            Porte clé peluche porcinet !
-                        </p>
-                        <p class="product-price"><strong>5$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-
-                                <!-- Produit 8 -->
-<div class="product-card">
-  <div class="product-image">
-    <img src="https://i.postimg.cc/MTHwY0rn/IMG-20260616-WA0008.jpg" alt="Produit 8" style="width: 100%; height: 100%; object-fit: cover;">
+  <div class="container">
+    <h1>Visitez notre site</h1>
+    <a href="https://denobsylebazar-cpu.github.io/Bazar-de-nobsy-/" target="_blank">
+      https://denobsylebazar-cpu.github.io/Bazar-de-nobsy-/
+    </a>
   </div>
-  <div class="product-body">
-    <h3 class="product-name"></h3>
-    <p class="product-description">
-    </p>
-    <p class="product-price"><strong>15$</strong></p>
-    <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-      Commander sur Messenger
-    </button>
-  </div>
-</div>
-                
-                                <!-- Produit 8 -->
-<div class="product-card">
-  <div class="product-image">
-    <img src="https://i.postimg.cc/cCYLQMrX/IMG-20260616-WA0009.jpg" alt="Produit 8" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <div class="product-body">
-    <h3 class="product-name"></h3>
-    <p class="product-description">
-    </p>
-    <p class="product-price"><strong>10$</strong></p>
-    <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-      Commander sur Messenger
-    </button>
-  </div>
-</div>
-                
-                             <!-- Produit 8 -->
-<div class="product-card">
-  <div class="product-image">
-    <img src="https://i.postimg.cc/XqMV7GQp/IMG-20260616-WA0010.jpg" alt="Produit 8" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <div class="product-body">
-    <h3 class="product-name"></h3>
-    <p class="product-description">
-    </p>
-    <p class="product-price"><strong>15$</strong></p>
-    <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-      Commander sur Messenger
-    </button>
-  </div>
-</div>   
-                
-                                <!-- Produit 8 -->
-<div class="product-card">
-  <div class="product-image">
-    <img src="https://i.postimg.cc/X74bH0hq/IMG-20260616-WA0019.jpg" alt="Produit 8" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <div class="product-body">
-    <h3 class="product-name"></h3>
-    <p class="product-description">
-    </p>
-    <p class="product-price"><strong>40$</strong></p>
-    <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-      Commander sur Messenger
-    </button>
-  </div>
-</div>
-                
-                <!-- Produit 0: petit flqc-->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/DwmzZJp7/1780307426191.jpg" alt=" " style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"></h3>
-                        <p class="product-description">
-                            Petit flash 
-                        </p>
-                        <p class="product-price"><strong>2$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Produit 0: toutou licorne-->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/BZYgpHKW/1779926197711.jpg" alt=" " style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"></h3>
-                        <p class="product-description">
-                            Toutou licorne réversible!
-                        </p>
-                        <p class="product-price"><strong>5$ par pièce</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Produit 1: Lampe fleur -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/wvLL8BQ4/1779692197028.jpg" alt="Lampe fleur" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name">Lampe fleur</h3>
-                        <p class="product-description">
-                            Lumière à brancher et à accrocher au mur. Parfait pour décorer votre chambre!
-                        </p>
-                        <p class="product-price"><strong>15$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-<!-- Produit 0: toutou licorne-->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/dtGbLJ12/1779926183674.jpg" alt=" " style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name"></h3>
-                        <p class="product-description">
-                            Toutou licorne réversible!
-                        </p>
-                        <p class="product-price"><strong>5$ par pièce</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Produit 2: Lampe kuromi -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/J0Th9wvT/1779692357695.jpg" alt="Lampe kuromi" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name">Lampe kuromi</h3>
-                        <p class="product-description">
-                            Adorable lampe au design Kuromi. Illumine votre espace avec style!
-                        </p>
-                        <p class="product-price"><strong>15$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produit 3: Pop 307 Sombra -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/4dxkjKGx/1779692505363.jpg" alt="Pop 307 Sombra" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name">Pop 307 Sombra</h3>
-                        <p class="product-description">
-                            Figurine de collection exclusive Sombra. Un must-have pour les collectionneurs!
-                        </p>
-                        <p class="product-price"><strong>10$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Produit 4: Pop -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://i.postimg.cc/4xWnXxs6/IMG-20260525-WA0160.jpg" alt="Pop" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="product-body">
-                        <h3 class="product-name">Pop</h3>
-                        <p class="product-description">
-                             boite un peut endommager mais pop jamais sorti.
-                        </p>
-                        <p class="product-price"><strong>20$</strong></p>
-                        <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Commander sur Messenger
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Produit 5: John Cena W -->
-<div class="product-card">
-  <div class="product-image">
-    <img src="https://i.postimg.cc/pLJhQKhr/IMG-20260525-WA0172.jpg" alt="John Cena W" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <div class="product-body">
-    <h3 class="product-name">John Cena W</h3>
-    <p class="product-description">
-        John Cena W.
-    </p>
-    <p class="product-price"><strong>10$</strong></p>
-    <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-      Commander sur Messenger
-    </button>
-  </div>
-</div>           
-
-                <!-- Produit 14 -->
-<div class="product-card">
-  <div class="product-image">
-    <img src="https://i.postimg.cc/1X83PxMH/IMG-20260525-WA0166.jpg" alt="Produit 14" style="width: 100%; height: 100%; object-fit: cover;">
-  </div>
-  <div class="product-body">
-    <h3 class="product-name"></h3>
-    <p class="product-description"></p>
-    <p class="product-price"><strong>30$</strong></p>
-    <button class="btn product-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-      Commander sur Messenger
-    </button>
-  </div>
-</div>
-                
-            </div>
-        </div>
-    </section>
-
-<!-- ========= SECTION CATALOGUE EN TIROIR ========= -->
-<section id="catalogue" class="fade-in-section">
-  <div class="catalogue-drawer">
-    
-    <button class="catalogue-toggle">
-      Catalogue 
-      <span class="arrow">▼</span>
-    </button>
-
-    <div class="catalogue-content">
-      <a href="#decoration">Décoration</a>
-      <a href="#vaisselle">Vaisselle et cuisine</a>
-      <a href="#bijoux">Bijoux</a>
-      <a href="#jeux">Casse tête et jeux</a>
-      <a href="#film">Jeux vidéo et film</a>
-      <a href="#peluche">Peluche et porte clé</a>
-      <a href="#vetement">Vêtement</a>
-      <a href="#maquillage">Maquillage et accessoire</a>
-      <a href="#lumiere">Lumière</a>
-    </div>
-
-  </div>
-</section>
-
-    <!-- ========== SECTION CONTACT ========== -->
-    <section id="contact" class="fade-in-section">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            
-            <div class="contact-grid">
-                <!-- Colonne 1: Informations -->
-                <div class="contact-column">
-                    <!-- Localisation -->
-                    <div class="contact-item">
-                        <div class="contact-item-label">📍 Localisation</div>
-                        <div class="contact-item-value">Joliette, Québec</div>
-                    </div>
-
-                    <!-- Livraison -->
-                    <div class="contact-item">
-                        <div class="contact-item-label">🚚 Livraison</div>
-                        <div class="contact-item-value">Oui, avec frais selon la distance</div>
-                    </div>
-
-                    <!-- Contact -->
-                    <div class="contact-item">
-                        <div class="contact-item-label">💬 Contact</div>
-                        <div class="contact-item-value">Messenger uniquement</div>
-                        <button class="btn contact-button" onclick="window.open('https://www.facebook.com/noemie.nadeau.705505', '_blank')">
-                            Envoyer un message
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Colonne 2: Google Maps -->
-<div class="contact-column">
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2839.4769825869433!2d-73.41619!3d46.00326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9e36e8d8d8d8d%3A0x1234567890abcdef!2sJoliette%2C%20QC%2C%20Canada!5e0!3m2!1sfr!2sca!4v1720000"
-            style="border:0; width: 100%; height: 300px; border-radius: 12px;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localisation - Joliette, Québec">
-        </iframe>
-    </div>
-</div>
-    
-    <!-- ========== FOOTER ========== -->
-    <footer>
-        <p>&copy; 2026 Le bazar de Nobsy. Tous droits réservés.</p>
-        <p>
-            <a href="https://www.facebook.com/share/g/18YTkXrkvB/" target="_blank" rel="noopener noreferrer">
-                Rejoindre notre groupe Facebook
-            </a>
-        </p>
-    </footer>
-
-    <!-- JavaScript -->
-  <script>
-  document.querySelector('.catalogue-toggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.catalogue-content').classList.toggle('active');
-  });
-  </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
