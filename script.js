@@ -1,216 +1,46 @@
-/* ========== BANNIÈRE NOUVEAU LOCAL - GESTION ========== */
-document.addEventListener('DOMContentLoaded', function() {
-    const banner = document.getElementById('localBanner');
-    
-    // Date de début : 12 juin 2026
-    const startDate = new Date('2026-06-12');
-    const today = new Date();
-    
-    // Calculer la date d'expiration (14 jours après le début)
-    const expirationDate = new Date(startDate);
-    expirationDate.setDate(expirationDate.getDate() + 14); // Expire le 26 juin 2026
-    
-    // Vérifier si la bannière doit être supprimée complètement
-    if (today > expirationDate) {
-        banner.remove();
-        console.log('Bannière supprimée : période de 14 jours dépassée (expiration : 26 juin 2026)');
-        return;
-    }
-    
-    // Afficher la bannière immédiatement au chargement
-    banner.classList.remove('hidden');
-    console.log('Bannière affichée au chargement de la page');
-    
-    // Gestion de l'animation : 2 minutes affichée + 30 secondes masquée
-    const showDuration = 2 * 60 * 1000; // 2 minutes en millisecondes
-    const hideDuration = 30 * 1000;      // 30 secondes en millisecondes
-    
-    function toggleBannerCycle() {
-        // Masquer après 2 minutes
-        setTimeout(function() {
-            banner.classList.add('hidden');
-            console.log('Bannière masquée');
-            
-            // Montrer à nouveau après 30 secondes
-            setTimeout(function() {
-                banner.classList.remove('hidden');
-                console.log('Bannière réaffichée');
-                
-                // Relancer le cycle
-                toggleBannerCycle();
-            }, hideDuration);
-        }, showDuration);
-    }
-    
-    // Lancer le premier cycle après 2 minutes
-    toggleBannerCycle();
-    
-    console.log('Animation bannière activée - Cycle: 2min affichée + 30s masquée - Expires le 26 juin 2026');
+// Animation d'apparition au chargement
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.container');
+  container.style.opacity = '0';
+  container.style.transform = 'translateY(30px)';
+
+  setTimeout(() => {
+    container.style.transition = 'all 0.8s ease';
+    container.style.opacity = '1';
+    container.style.transform = 'translateY(0)';
+  }, 200);
 });
 
-/* ========== MOBILE MENU FUNCTIONALITY ========== */
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
+// Effet clic sur le bouton + compteur
+const link = document.querySelector('a');
+let clicks = 0;
 
-    // Toggle mobile menu
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+link.addEventListener('click', (e) => {
+  clicks++;
+  console.log(`Clic n°${clicks} sur le lien`);
 
-    // Close menu when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
+  // Petite vibration sur mobile
+  if (navigator.vibrate) {
+    navigator.vibrate(50);
+  }
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInsideMenu = navMenu.contains(event.target);
-        const isClickOnHamburger = hamburger.contains(event.target);
-        
-        if (!isClickInsideMenu && !isClickOnHamburger && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    });
+  // Message de confirmation
+  setTimeout(() => {
+    alert('Redirection vers Le bazar de Nobsy ✅');
+  }, 100);
 });
 
-/* ========== SMOOTH SCROLL WITH NAVBAR OFFSET ========== */
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        
-        // Skip if href is just "#"
-        if (href === '#') return;
-        
-        e.preventDefault();
-        const target = document.querySelector(href);
-        
-        if (target) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = target.offsetTop - navbarHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+// Change la couleur du fond toutes les 5s
+const colors = [
+  'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+  'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+  'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+  'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+];
 
-/* ========== BUTTON EVENT LISTENERS ========== */
-
-// "Voir les produits" button - scroll to products section
-const btnProduits = document.getElementById('btnProduits');
-if (btnProduits) {
-    btnProduits.addEventListener('click', function() {
-        const produitSection = document.getElementById('produits');
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-        const targetPosition = produitSection.offsetTop - navbarHeight;
-        
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// "Rejoindre le Live" button - open Facebook group in new tab
-const btnLive = document.getElementById('btnLive');
-if (btnLive) {
-    btnLive.addEventListener('click', function() {
-        window.open('https://www.facebook.com/share/g/18YTkXrkvB/', '_blank');
-    });
-}
-
-/* ========== INTERSECTION OBSERVER FOR FADE-IN ANIMATIONS ========== */
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Optional: stop observing after animation to save performance
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all elements with fade-in-section class
-document.querySelectorAll('.fade-in-section').forEach(element => {
-    observer.observe(element);
-});
-
-/* ========== NAVBAR SCROLL EFFECT (Optional Enhancement) ========== */
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Add subtle shadow on scroll
-    if (scrollTop > 0) {
-        navbar.style.boxShadow = 'var(--shadow-lg)';
-    } else {
-        navbar.style.boxShadow = 'var(--shadow)';
-    }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-
-/* ========== RESPONSIVE IMAGE OPTIMIZATION ========== */
-// Load images lazily if supported
-if ('IntersectionObserver' in window) {
-    const imageElements = document.querySelectorAll('[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    imageElements.forEach(img => imageObserver.observe(img));
-}
-
-/* ========== ACCESSIBILITY ENHANCEMENTS ========== */
-// Add keyboard navigation support for buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            this.click();
-        }
-    });
-});
-
-/* ========== PERFORMANCE: Debounce resize events ========== */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Handle resize events efficiently
-window.addEventListener('resize', debounce(function() {
-    // Recalculate navbar offset for smooth scroll if needed
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
-}, 250));
-
-console.log('Le bazar de Nobsy - Site chargé avec succès! 🎉');
+let colorIndex = 0;
+setInterval(() => {
+  colorIndex = (colorIndex + 1) % colors.length;
+  document.body.style.background = colors[colorIndex];
+  document.body.style.transition = 'background 2s ease';
+}, 5000);
